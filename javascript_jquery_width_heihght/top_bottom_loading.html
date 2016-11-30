@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>顶部底部加载</title>
+	</head>
+	<body>
+		<div class="div1" style="height:1500px">fds</div>
+		<!--javascript begin-->
+		<script>
+			function topBottomLoading(){
+				var clients=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;
+				var scrollTop=document.body.scrollTop;
+				var scrollHeight=document.body.scrollHeight;
+				if(clients+scrollTop>=scrollHeight){
+					console.log("底部加载");
+				}
+				if(scrollTop==0){
+					console.log("顶部加载");
+				}
+			}
+			window.onscroll=topBottomLoading;
+		</script>
+		<!--jquery begin-->
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+		<script>
+			$(window).scroll(function(){
+				var areaHeight=$(window).height();
+				var wholeHeight=$(document).height();
+				var scrollTop=$(window).scrollTop();
+				if(areaHeight+scrollTop>=wholeHeight){
+					console.log("底部加载");
+				}
+				if(scrollTop==0){
+					console.log("顶部加载");
+				}
+			});
+		</script>
+	</body>
+</html>

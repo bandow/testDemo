@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>滚动加载</title>
+	</head>
+	<body>
+		<div class="div1" style="height:1300px"></div>
+		<div class="div2" id="div2"><p>你好</p></div>
+		<!--javascript begin-->
+		<script>
+			function scrollLoading(){
+				var clients=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;
+				var oDiv=document.getElementById('div2');
+				var divTop=oDiv.getBoundingClientRect().top;   //getBoundingClientRect函数获取div的top left right bottom
+				var aP=oDiv.getElementsByTagName('p')[0];
+				if(divTop<=clients){
+					aP.innerHTML="大家好";
+					console.log(0);
+				}
+			}
+			window.onscroll=scrollLoading;
+		</script>
+		
+		<!--jquery begin-->
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+		<script>
+			$(window).scroll(function(){
+				var areaHeight=$(window).height();
+				var divTop=$(".div2").offset().top;
+				var scrollHeight=$(window).scrollTop();
+				if(areaHeight+scrollHeight>=divTop){
+					console.log(1);
+				}
+			});
+		</script>
+	</body>
+</html>

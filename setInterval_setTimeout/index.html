@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>setInterval与setTimeout的区别</title>
+	</head>
+	<body>
+		<script>
+		    //setInterval  是间隔执行       clearInterval  清除定时器
+			var a=0;
+			var b=setInterval(function(){
+				console.log(a++);
+				if(a>5){
+					clearInterval(b);
+				}
+			},500);
+			//setTimeout 是延时执行   执行一次
+			setTimeout(function(){
+				alert("setTimeout");
+			},3000);
+		</script>
+	</body>
+</html>

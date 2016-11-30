@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>获取滚动条的宽度</title>
+	</head>
+	<body>
+		<p>文字</p><p>文字</p><p>文字</p><p>文字</p><p>文字</p>
+		<p>文字</p><p>文字</p><p>文字</p><p>文字</p><p>文字</p>
+		<p>文字</p><p>文字</p><p>文字</p><p>文字</p><p>文字</p>
+		<p>文字</p><p>文字</p><p>文字</p><p>文字</p><p>文字</p>
+		<p>文字</p><p>文字</p><p>文字</p><p>文字</p><p>文字</p>
+		<p>文字</p><p>文字</p><p>文字</p><p>文字</p><p>文字</p>
+	</body>
+	<script>
+		function getScrollBar(){
+			var el=document.createElement('p'),
+			styles={
+				width:"100px",
+				heihgt:"100px",
+				overflowY:"scroll"
+			},i,scrollBarWidth;
+			for(i in styles){
+				el.style[i]=styles[i];
+			}
+			document.body.appendChild(el);
+			var scrollBarWidth=el.offsetWidth-el.clientWidth;
+			el.remove();
+			return scrollBarWidth;
+		}
+		console.log(getScrollBar());
+	</script>
+</html>
