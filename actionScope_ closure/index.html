@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>作用域||闭包原理</title>
+</head>
+<body>
+	<!--作用域原理-->
+	<script>
+	    var x =1;
+		function f(){
+			var y=2;
+			function g(){
+				var z=3;
+				console.log(z);
+			}
+			g();	
+		}
+		f();
+	</script>
+	<!--闭包原理 begin-->
+	<script>
+		function a(){
+			var i=0;
+			function b(){
+				console.log(++i);
+			}
+			return b;   //输出b函数
+		}
+		var c=a();  //定义c函数为了接受b函数
+		c();
+		c();
+	</script>
+	<!--
+	 *匿名函数 begin
+	 *匿名函数好处:立即执行这个函数    (function(){})()
+	 *如下区别就是a名字的函数：
+	 * function a(){}  
+	 * a();
+	 -->
+	<script>
+		var loopPlayerInit=(function(){			
+			function init(){
+				alert(0);
+				//执行初始代码
+			}
+			return init;
+		})();
+		loopPlayerInit();
+	</script>
+</body>
+</html>
