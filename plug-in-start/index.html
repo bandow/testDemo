@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div class="id" id="id" onclick="myFunction()">plug-in</div>
+<div id="demo"></div>
+<script src="scripts/date.js"></script>	
+<script>
+var carname;
+console.log(carname);
+function myFunction(){
+	carname="javascript";
+    document.getElementById("id").innerHTML=carname;
+    console.log(carname);
+    console.log(null==undefined);
+}
+var person={
+	firstname:'deng',
+	lastname:'bin',
+	id:69
+}
+console.log(person.firstname);
+console.log(person["lastname"]);
+console.log("继续努力");
+var x;
+var txt="";
+for(x in person){
+	txt+=person[x];
+}
+document.getElementById("demo").innerHTML=txt;
+
+if(carname!=null){
+	console.log(123);
+}else{
+	console.log(321);
+}
+
+var x= new Array;
+console.log(x);
+
+var tex="Hello";
+console.log(tex.length);
+
+var message="hello"
+var x=message.toUpperCase();
+console.log(x);
+
+function myFuntion1(){
+	var v=100;
+	return v;
+}
+console.log(myFuntion1());
+
+function myFuntion2(a,b){
+  if(a>b){
+  	return;
+  }
+  u=a+b;
+  return u;
+}
+console.log(myFuntion2(10,11));
+
+var n=new Date().getDay();
+switch(n){
+	case 1:
+       console.log("星期一");
+	break;
+	case 2:
+	  console.log("星期二");
+	break;
+	case 3:
+	  console.log("星期三");
+	break;
+	case 4:
+	  console.log("星期四");
+	break;
+	case 5:
+	  console.log("星期五");
+	break;
+	case 6:
+	  console.log("星期六");
+	break;
+	case 7:
+	  console.log("星期日");
+	break;
+	default:
+	  console.log(456);
+}
+
+for(var i=0;i<10;i++){
+	if(i==3){
+		// break;
+		continue;
+	}
+	console.log(i);
+}
+var j=0;
+var txt="";
+while(j<10){
+	if(j==3){
+		break;
+	}
+	j++;
+	console.log(j);
+}
+var y=0;
+do{
+	y++;
+	console.log(y);
+}
+while(y<6);
+
+
+var txt1="";
+function message1(){
+	try{
+	  adddlert("Welcome guest!");
+	}
+	catch(err){
+	  txt1="There was an error on this page.\n\n";
+	  txt1+="Error description: " + err.message + "\n\n";
+	  txt1+="Click OK to continue.\n\n";
+	  alert(txt1);
+	}
+}
+message1();
+
+
+var para=document.createElement("p");
+var node=document.createTextNode("这是新段落！");
+para.appendChild(node);
+
+var div=document.getElementById("id");
+div.appendChild(para);
+
+var demoDiv=document.getElementById("demo");
+document.body.removeChild(demoDiv);
+
+</script>
+</body>
+</html>

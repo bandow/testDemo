@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var message="hello word";
+		//访问对象的属性：objectName.propertyName
+		var x=message.length;
+		var z=message.replace(/word/,"world");
+		var y=message.indexOf("w");
+		var m=message.match("word");
+		var txt1=message.big();
+		var txt2=message.small();
+		var txt3=message.bold();
+		var txt4=message.link("http://www.baidu.com");
+		console.log(x);
+		console.log(z);
+		console.log(y);
+		console.log(m);
+		console.log(txt1);
+		console.log(txt2);
+		console.log(txt3);
+		console.log(txt4);
+
+        //访问对象的方法：objectName.methodName()
+		var y=message.toUpperCase();
+		console.log(y);
+        //创建 JavaScript 对象
+		person={firstName:"cheng",lastName:"bin",age:30,eyecolor:"blue"}
+        console.log(person.firstName+person.age+person.eyecolor);
+        //使用函数来构造对象：
+        function person1(firstName,lastName,age,eyecolor){
+        	this.firstName=firstName;
+        	this.lastName=lastName;
+        	this.age=age;
+        	this.eyecolor=eyecolor;
+        	//把方法添加到 JavaScript 对象
+        	this.changeName=changeName;
+        	function changeName(name){
+        		this.lastName=name;
+        	}
+        }
+        // var myFather=new person1("cheng","bin",30,"blue");
+        // var myMother=new person1("Steve","Jobs",48,"green");
+        // console.log(myFather.firstName+myFather.age+myFather.eyecolor);
+        // console.log(myMother.firstName+myMother.age+myMother.eyecolor);
+
+        var myMother=new person1("Steve","Jobs",56,"green");
+        myMother.changeName("Ballmer");
+        console.log(myMother.lastName);
+
+        //循环遍历对象的属性:
+        var person3={firstName:"ddd",lastName:"bbb",age:30,eyecolor:"blue"}
+        var txt="",n=0;
+        for(n in person3){
+           txt=txt+person3[n];
+        }
+        console.log(txt);
+
+	</script>
+</body>
+</html>

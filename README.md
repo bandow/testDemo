@@ -124,4 +124,7 @@ clearInterval();  清除定时器
 #jquery_transfrom
 多图旋转轮播效果
 jquery.transform.min.js
-<a href="https://github.com/louisremi/jquery.transform.js">详情</a>    
+<a href="https://github.com/louisremi/jquery.transform.js">详情</a>   
+
+#tab
+原生js选项卡特效

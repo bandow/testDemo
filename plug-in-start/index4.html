@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <div id="array"></div>
+    <div id="array1"></div>
+    <div id="array2"></div>
+	<script>
+	    var arrayList=document.getElementById("array");
+	    var arrayList1=document.getElementById("array1");
+	    var arrayList2=document.getElementById("array2");
+	    var arrayTxt="";
+	    var mycars=["Saab","Volvo","BMW"];
+	    var mycars1=["deng","cheng","bin"];
+	    var mycars2=["5","89","10","-10"];
+
+		for(x in mycars){
+			arrayTxt+=mycars[x]+" ";
+            arrayList.innerHTML=arrayTxt;
+		}
+         
+        arrayList1.innerHTML=(mycars.concat(mycars1)).join(".");
+        //比较两个数的大小
+        function sortNumber(a, b){
+			return a - b
+		}
+
+        arrayList2.innerHTML=mycars2.sort(sortNumber);
+
+	</script>
+</body>
+</html>

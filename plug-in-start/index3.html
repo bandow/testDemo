@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <div id="date"></div>
+    <div id="date2"></div>
+	<script>
+	    var dateDiv=document.getElementById("date");
+	    var dateDiv2=document.getElementById("date2");
+	    function tiems(){
+	    	var d=new Date();
+			// var millisecond=times.getTime();
+			// var y=times.setFullYear(2017,1,24);
+			// var x=times.toUTCString();
+			var h=checkTime(d.getHours());
+			var m=checkTime(d.getMinutes());
+			var s=checkTime(d.getSeconds());
+			var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+			var day=weekday[d.getDay()];
+			var t=setTimeout('tiems()',500);
+			dateDiv.innerHTML=h+":"+m+":"+s+" "+day;
+	    }
+        // dateDiv.innerHTML=times;
+        // console.log(millisecond);
+        // console.log(y);
+        // console.log(x);
+        // console.log(day);
+        //补0函数
+        function checkTime(i){
+           return  i < 10 ? "0" + i : "" + i;
+        }
+        tiems();      
+	</script>
+</body>
+</html>

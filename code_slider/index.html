@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin:0;padding:0;}
+	</style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>	
+(function(){
+	//严格模式
+	'use strict';  
+
+	
+	//默认配置
+	var slider={
+		el:'canvas',
+		height:0,
+	};
+
+    console.log(slider.height);
+	var canvas=document.getElementById(slider.el);
+	var context=canvas.getContext("2d");
+	
+	context.fillStyle="rgba(100,150,185,0.5)";
+	context.fillRect(0,0,150,75);
+
+
+})()
+</script>
+</body>
+</html>

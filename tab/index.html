@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0;border:none;}
+		.box{
+			margin:0 auto;
+			width:500px;
+			height:auto;
+			overflow: hidden;
+			background:#ccc;
+		}
+		.box ul{
+			width:100%;
+			height:auto;
+			overflow:hidden;
+		}
+		.box ul li{
+			float:left;
+			width:33.333333%;
+			font-size:14px;
+			line-height:3;
+		    list-style:none;
+		    text-align:center;
+		    border-bottom:1px solid #999;
+		    cursor:pointer;
+		}
+		.box ul .on{
+			border-bottom:1px solid;
+			color:red;
+		}
+		.box-list{
+			padding:20px;
+			display:none;
+		}
+		.box-list p{
+			font-size:16px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<ul>
+			<li class="on">科学</li>
+			<li>文学</li>
+			<li>数学</li>
+		</ul>
+		<div class="box-list" style="display:block">
+			<p>科学科学科学科学</p>
+		</div>
+		<div class="box-list">
+			<p>文学文学文学文学</p>
+		</div>
+		<div class="box-list">
+			<p>数学数学数学数学数学</p>
+		</div>
+	</div>
+<script>
+window.onload=function(){
+	tab("box");
+}
+function tab(id){
+	var obj=document.getElementById(id),
+	    aLi=document.getElementsByTagName("li"),
+	    aList=obj.getElementsByTagName("div");
+	for(var i=0;i<aLi.length;i++){
+		//定义index
+		aLi[i].index=i;
+		aLi[i].onclick=function(){
+			console.log(this.index);
+			for(var j=0;j<aLi.length;j++){
+				aLi[j].className="";
+				aList[j].style.display="none";
+			}
+			this.className="on";
+			aList[this.index].style.display="block";
+		}
+	}
+}
+</script>
+</body>
+</html>
