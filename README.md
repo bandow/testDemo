@@ -105,26 +105,26 @@ scrollTop(): 相当上、下或者元素不能被滚动，那么这个值为0，
 offset(): 相对于document的当前坐标值（相对于body左上角的left，top的值）         
 .position(): 相对于offset parent的当前坐标值（相对于offset parent元素左上角的left、top的值）                 
 
-#setInterval_setTimeout
+# setInterval_setTimeout   
 setInterval  是间隔执行        
 setTimeout 是延时执行   执行一次    
 clearInterval();  清除定时器
 
-#actionScope_chosure
+# actionScope_chosure   
 #作用域及作用域链
 1、作用域（scope）是程序中定义这个变量的有效区域                 
 2、全局变量和局部变量                   
 3、作用域链的查询顺序是--由内向外                  
 4、javascript没有块级作用域                          
-#闭包的应用
+# 闭包的应用
 1、闭包就是能够读取其他函数内部变量的函数                      
 2、让这些变量的值始终保存在内存中                       
 3、闭包可以保护函数内的变量安全     
 
-#jquery_transfrom
+# jquery_transfrom  
 多图旋转轮播效果
 jquery.transform.min.js
 <a href="https://github.com/louisremi/jquery.transform.js">详情</a>   
 
-#tab
+# tab  
 原生js选项卡特效
