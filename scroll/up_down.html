@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			border:0;
+		}
+		.box{
+			margin:30px auto;
+			width:200px;
+			height:112px;
+			background:#ccc;
+			overflow:hidden;
+		}
+		.box ul li{
+			font-size:14px;
+			line-height:2;
+			list-style:none;
+			padding:0 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<ul id="boxT">
+			<li>0公司的某个路口疏导</li>
+			<li>1公司的某个路口疏导</li>
+			<li>2公司的某个路口疏导</li>
+			<li>3公司的某个路口疏导</li>
+			<li>4公司的某个路口疏导</li>
+			<li>5公司的某个路口疏导</li>
+			<li>6公司的某个路口疏导</li>
+			<li>7公司的某个路口疏导</li>
+			<li>8公司的某个路口疏导</li>
+			<li>9公司的某个路口疏导</li>
+		</ul>
+		<ul id="boxB"></ul>
+	</div>
+	<script>
+		window.onload=function(){
+			scroll("box","boxT","boxB");
+		}
+		function scroll(id,id1,id2){
+			var obj=document.getElementById(id),
+				obj1=document.getElementById(id1),
+				obj2=document.getElementById(id2),
+				speed=30;
+			obj2.innerHTML=obj1.innerHTML;
+			function marquee(){
+				if(obj2.offsetTop-obj.scrollTop<=0)  
+					obj.scrollTop-=obj1.offsetHeight;
+				else{
+					obj.scrollTop++
+				}
+			}
+			var times=setInterval(marquee,speed);
+			obj.onmouseover=function(){
+				clearInterval(times);
+			}
+			obj.onmouseout=function(){
+				times=setInterval(marquee,speed);
+			}
+		}
+	</script>
+</body>
+</html>
