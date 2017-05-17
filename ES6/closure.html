@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>闭包实例</title>
+</head>
+<body>
+	<div>
+		<div class="list">11111</div>
+		<div class="list">22222</div>
+		<div class="list">33333</div>
+		<div class="list">44444</div>
+		<div class="list">55555</div>
+	</div>
+	<script>
+		function iteratorFactory(i){
+			var onclick=function(){
+				console.log(i);
+			}
+			return onclick;
+		};
+
+		var aList=document.querySelectorAll('.list');
+		for(var i=0;i<aList.length;i++){
+			aList[i].onclick=iteratorFactory(i);
+		}
+
+	</script>
+</body>
+</html>
